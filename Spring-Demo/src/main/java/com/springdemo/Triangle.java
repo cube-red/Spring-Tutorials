@@ -1,6 +1,9 @@
 package com.springdemo;
 
-public class Triangle {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Triangle implements InitializingBean, DisposableBean {
 	private Point p1;
 	private Point p2;
 	private Point p3;
@@ -28,6 +31,18 @@ public class Triangle {
 		System.out.println("X=" + p1.getX() + " Y="+p1.getY());
 		System.out.println("X=" + p2.getX() + " Y="+p2.getY());
 		System.out.println("X=" + p3.getX() + " Y="+p3.getY());
+	}
+	
+	
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		//System.out.println("Destroying Bean!!");
+	}
+	
+	
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		//System.out.println("Initializing Bean!!");
 	}
 	
 	

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 
+ <!-- This is the config file for explaining Spring Tutorials 
+ 	Tutorial : Java Brains
+ 	Video : (coverd till)Lec 13 : Bean Definition Inheritance
+  -->
+ 
+ <bean id="parenttriangle" class="com.springdemo.Triangle">
+ 		<property name="p1" ref="p1"></property>
+</bean>
+ 
+ <bean id="triangle1" class="com.springdemo.Triangle" parent="parenttriangle">
+ 		<property name="p2" ref="p21"></property>
+ 		<property name="p3" ref="p31"></property>
+</bean>
+
+<bean id="triangle2" class="com.springdemo.Triangle" parent="parenttriangle">
+		<property name="p1">
+			 <bean id="p12" class="com.springdemo.Point">
+ 				<property name="x" value="-1"></property>
+ 				<property name="y" value="-1"></property>
+			</bean>
+		</property>
+ 		<property name="p2" ref="p22"></property>
+ 		<property name="p3" ref="p32"></property>
+</bean>
+ 
+ <bean id="p1" class="com.springdemo.Point">
+ 	<property name="x" value="0"></property>
+ 	<property name="y" value="0"></property>
+ </bean>
+ 
+  <bean id="p21" class="com.springdemo.Point">
+ 	<property name="x" value="1"></property>
+ 	<property name="y" value="1"></property>
+ </bean>
+ 
+  <bean id="p31" class="com.springdemo.Point">
+ 	<property name="x" value="1"></property>
+ 	<property name="y" value="0"></property>
+ </bean>
+ 
+ <bean id="p22" class="com.springdemo.Point">
+ 	<property name="x" value="6"></property>
+ 	<property name="y" value="7"></property>
+ </bean>
+ 
+  <bean id="p32" class="com.springdemo.Point">
+ 	<property name="x" value="2"></property>
+ 	<property name="y" value="4"></property>
+ </bean>
+ 
+ 
+ <!-- more bean definitions go here -->
+</beans>

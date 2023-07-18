@@ -4,6 +4,12 @@
  xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd">
  
+ 
+ <!-- This is the config file for explaining Spring Tutorials 
+ 	Tutorial : Java Brains
+ 	Video : (coverd till)Lec 12
+  -->
+ 
  <bean id="triangle" class="com.springdemo.Triangle" autowire="byName">
  	<!--  
 	 	<property name="p1" ref="point1"></property>
@@ -28,6 +34,6 @@
  	<property name="y" value="0"></property>
  </bean>
  
- 
+ <bean class="com.springdemo.DisplayNameBeanProcessor"></bean>
  <!-- more bean definitions go here -->
 </beans>
